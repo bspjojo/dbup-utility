@@ -22,6 +22,7 @@ namespace Migrator
             IConfigurationRoot configuration = builder.Build();
 
             var connectionString = configuration.GetConnectionString("GameDb");
+
             var migrationSection = configuration.GetSection("Migration");
             var folder = migrationSection.GetValue<string>("FolderPath");
             var ensureDatabaseExists = migrationSection.GetValue<bool>("EnsureDatabaseExists");
